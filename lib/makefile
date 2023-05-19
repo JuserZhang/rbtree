@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Werror -fpic
+CFLAGS = -Wall -Werror -fpic -g
 LDFLAGS = -shared
 LIBNAME = librbt.so
 SRCS = rbtree.c rbt_api.c
@@ -8,7 +8,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(LIBNAME)
 
 $(LIBNAME): $(OBJS)
-	$(CC) $(LDFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<

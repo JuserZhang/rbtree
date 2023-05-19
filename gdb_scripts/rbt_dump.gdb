@@ -48,8 +48,8 @@ define rbt_dump
   set $iter = rb_first(&$rbt->root)
 
   if !$iter
-    printf "iter is null"
-    return
+    printf "iter is null\n"
+    return 0
   end
 
   #由于node节点在结构体第一个位置，因此这种强转也可以使用
