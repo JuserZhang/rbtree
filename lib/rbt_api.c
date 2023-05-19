@@ -1,7 +1,7 @@
 #include "rbt_api.h"
 
-#define DBG_ERR(fmt, ...) printf("[ERR] " fmt, ##__VA_ARGS__)
-#define DBG_INFO(fmt, ...) printf("[INFO] " fmt, ##__VA_ARGS__)
+#define DBG_ERR(fmt, ...)  //printf("[ERR] " fmt, ##__VA_ARGS__)
+#define DBG_INFO(fmt, ...) //printf("[INFO] " fmt, ##__VA_ARGS__)
 
 #define SAFE_FREE(ptr) do { if (ptr != NULL) { free(ptr); ptr=NULL; } } while(0)
 

@@ -8,7 +8,7 @@ void destroy_fn(void *private_data) {
 }
 
 void dump_fn(void *private_data) {
-    printf("rbt value: %s\n", (char *)private_data);
+    printf("rbt dump value: %s, %p\n", (char *)private_data, private_data);
 }
 
 int main() {
@@ -18,25 +18,14 @@ int main() {
     rbt_add(rbt, 10, strdup("ten"), destroy_fn, dump_fn);
     rbt_add(rbt, 20, strdup("twenty"), destroy_fn, dump_fn);
     rbt_add(rbt, 30, strdup("thirty"), destroy_fn, dump_fn);
-
+    rbt_dump(rbt);
     char *value = (char *)rbt_find(rbt, 20);
     if (value != NULL) {
-        printf("value: %s\n", value);
+        printf("rbt find value: %s, %p\n", value, value);
     }
-
-    rbt_dump(rbt);
-
     rbt_delete(rbt, 10);
-
-    rbt_dump(rbt);
-
     rbt_delete(rbt, 20);
-
-    rbt_dump(rbt);
-
     rbt_delete(rbt, 30);
-
     rbt_destroy(rbt);
-
     return 0;
 }
