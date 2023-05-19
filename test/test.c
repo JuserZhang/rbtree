@@ -18,7 +18,7 @@ int main() {
     rbt_add(rbt, 20, strdup("twenty"), destroy_fn, dump_fn);
     rbt_add(rbt, 30, strdup("thirty"), destroy_fn, dump_fn);
 
-    //printf("size: %d\n", rbt_size(rbt));
+
     rbt_dump(rbt);
     char *value = (char *)rbt_find(rbt, 20);
     if (value != NULL) {
@@ -27,7 +27,6 @@ int main() {
 
     rbt_delete(rbt, 20);
 
-    //printf("size: %d\n", rbt_size(rbt));
 
     rbt_dump(rbt);
 
